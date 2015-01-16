@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<title>Assignment-2 Choose your own adventure</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+console.log("This is the Magic 8 Ball");
+var answer = confirm("Would you like your fortune told: ");
+console.log(answer);
+if(!answer){
+  console.log("Congratulations today is the best day for you!");
+} else {
+  var fortune = prompt("Please enter number from 1 to 10: ");
+  fortune = Number(fortune);
+  if(fortune > 5) {
+    console.log("You will get the present soon");
+  } else if (fortune && 5) {
+    console.log("Take a rest, you are so tired!");
+  } else if (fortune < 10) {
+    console.log("I'm tired. Let's make this your last question");
+  } else {
+    var question = prompt("What is your question to fortune? ");
+    switch(question) {
+      case "school":
+        console.log("You will get your degree soon ");
+        break;
+
+        case "marriage":
+          console.log("Your honeymoon will be in Thailand");
+          break;
+
+          case "gift":
+            case "car":
+              console.log("Someone will buy new car");
+              default:
+                console.log("I don't have answer, sorry");
+              }
+              console.log("Thank you for your patience");
+              }
+
+}
+
+
+
+
+</script>
+</body>
+</html>
