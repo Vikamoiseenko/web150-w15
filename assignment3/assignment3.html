@@ -1,0 +1,67 @@
+<!doctype html>
+<script src="http://thomaswilburn.net/scc/data/quakes.js"></script>
+<script>
+var averDepth = 0;
+var bigMagnitude = 0;
+var whatType = 0;
+var big = 0;
+var deepest = 0;
+var totalExplosion = 0;
+var numExpl = 0;
+
+for (var i = 0; i < magnitude.length; i++) {
+  var r = magnitude[i];
+  if (r > bigMagnitude) {
+    bigMagnitude = r;
+  }
+  if (magnitude[i] > 2.0) {
+    big ++;
+  }
+}
+//what was the size of the biggest earthquake this week?
+console.log("The size of the biggest earthquake is:", bigMagnitude);
+//How many earthquakes had a magnitude greater than 2.0?
+console.log("It was", big, "eartquakes with a magnitude greater than 2.0");
+
+//what is the average depth where a quake takes place?
+for (var i = 0; i < depth.length; i++) {
+  var averExpl = totalExplosion/numExpl;
+  var r = depth[i];
+  averDepth = averDepth + depth[i];
+  if (type[i] == 'explosion') {
+  totalExplosion = totalExplosion + magnitude[i];
+  numExpl++;
+  }
+  if (type[i] == 'earthquake' && depth[i] > deepest) {
+    deepest = depth[i];
+  }
+}
+console.log("The average depth where a quake takes place is", averDepth / depth.length);
+//What's the average magnitude of quakes with a type of "explosion"?
+console.log("The average magnitude of quakes with type of explosion is", averExpl);
+//What's the depth of the biggest earthquake?
+console.log("The depth of the biggest earthquake is:", deepest);
+
+
+//how many quakes have a type other than earthquake?
+for (var i = 0; i < type.length; i++) {
+  var r = type[i];
+  if(type[i] != 'earthquake') {
+    whatType++;
+  
+}
+}
+console.log("Other type are:", whatType);
+
+
+for (var i = 0; i < magnitude.length; i++) {
+  var r = magnitude[i];
+  if (r > bigMagnitude) {
+    bigMagnitude = r;
+  }
+  if (magnitude[i] > 2.0) {
+    big ++;
+  }
+}
+
+</script>
