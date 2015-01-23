@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+This is my page
+<script>
+  var x = "false";
+if (x === "true") {
+console.log("Condition successful");
+
+var cash = 2.00;
+//if wallet < .75
+if (cash < .75) {
+  console.log("go to the store");
+} else if (cash < 1.75) {
+  //else if wallet <1.75
+  //buy can
+  console.log("Buy can");
+} else {
+  console.log("Bottle");
+}
+}
+//switch / case - useful for discrete, categorical choises
+var cat = prompt("What kind of cat do you want?");
+cat = cat.toLowerCase();
+switch (cat) {
+  case "tabby":
+    console.log("Red delicious of cats");
+    break;
+
+    case "calico":
+
+    case "tortoiseshell":
+      console.log("The best of cats - almost always female");
+      break;
+
+      default:
+        console.log("I dont know about your cat");
+}
+//&& - AND
+//|| - OR
+if (cas < .75 || cash > 5) {
+  console.log("Go to the store");
+}
+if (cas  > 5 && cash < 10) {
+  console.log("Buy something in the building");
+}
+
+</script>
+</body>
+</html>

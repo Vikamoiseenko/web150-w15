@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<script>
+var names = ["Vicki", "Kate", "mama"];
+console.log(names);
+console.log(names[2]);
+names[2]= "dad";
+console.log(names);
+//name.push("Naile");
+//http://codepen.io/
+names[4]= "Naile";
+console.log(names);
+var nermal = names.pop();
+console.log(names, nermal, names.length);
+
+for (var i = 0; i< names.length; i++){
+console.log(names[i]);
+}
+
+var list = [1, 1, 2, 3, 5, 8, 13, 21];
+//add up all the numbers
+var total = 0;
+for (var  i =0; i <list.length; i++) {
+var item = list[i];
+total = total + item;
+}
+console.log("sum of the list ", total);
+//find an average
+var average = total/list.length;
+console.log("the everage is: ", average);
+//counter number of items
+var count = 0;
+for(var i=0; i<list.length; i++) {
+var item = list[i];
+if (item >4) {
+count++;
+  }
+}
+console.log("# of items >4:", count);
+//filter list to find odd numbers
+var odds = [];
+for(var i=0; i<list.length; i++) {
+var item = list[i];
+if(item % 2) {
+  odds.push(item);
+}
+}
+console.log("the odd numbers are: ", odds);
+//double each item and store it in place
+for(var i=0; i<list.length; i++) {
+var item = list[i];
+list[i] = item * 2;
+}
+console.log("doubled: ", list);
+
+</script>
+
+
+</html>

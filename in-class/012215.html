@@ -1,0 +1,58 @@
+<!doctype html>
+<script src="http://thomaswilburn.net/scc/data/schools.js"></script>
+<script>
+/*
+for (var i=0; i < names.lenght; i++) {
+  var item = names[i];
+  console.log(item);
+}
+*/
+//highest revenue
+var highestRev = 0; //revenue[0]
+var index = 0;
+for(var i = 0; i < revenue.length; i++) {
+  var r = revenue[i];
+  if(r > highestRev) {
+    highestRev = r;
+    index = i;
+  }
+}
+console.log("Highest Revenue:", highestRev);
+console.log("The school is:", names[index]);
+console.log("Per-student spending:", spending[index] / enrollment[index]);
+
+//average spending
+var totalSpending = 0;
+for(var i = 0; i < spending.length; i++) {
+  var r = spending[i];
+  totalSpending = totalSpending + spending[i];
+
+}
+console.log("Total spending for WA:", totalSpending /1000 /1000);
+console.log("Average distric", totalSpending / spending.length);
+
+//find per cap student spending
+var underpopulated = 0;
+for (var i =0; i < spending.length; i++) {
+  var spend = spending[i];
+  var students = enrollment[i];
+  if (students > 200){
+
+  var percap = spend / students;
+  console.log(percap, students, names[i]);
+} else {
+  underpopulated++;
+}
+}
+console.log("Removed from sample:", underpopulated);
+
+//
+var cheapskates = [];
+for (var i=0; i < revenue.length; i++) {
+  var profit = revenue[i] - spending[i];
+  if (profit >0) {
+    cheapskates.push(names[i]);
+  }
+}
+console.log(cheapskates);
+</script>
