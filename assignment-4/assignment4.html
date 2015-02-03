@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<title>Companies</title>
+<meta charset="utf8">
+</head>
+<body>
+This space intentionally left blank.
+<script src="http://thomaswilburn.net/scc/data/companies.js"></script>
+<script>
+//What's the smallest company (in terms of employee count) on the list?
+var smallest = companies[0];
+for (var i = 0; i < companies.length; i++){
+  var comp = companies[i];
+  if (comp.employees < smallest.employees) {
+    smallest = comp;
+  }
+}
+console.log("The smallest company is:", smallest.company);
+console.log(smallest.employees);
+</script>
+<script>
+//Several companies lost money this year: they had a negative
+//profit. What were these companies?
+var lost = [];
+for (var i = 0; i < companies.length; i++){
+  var item = companies[i];
+  if (item.profitDelta < 0){
+    lost.push(item);
+  }
+}
+console.log(lost, "Companies lost money this year ", lost.length);
+
+//What's the average market cap for companies in the manufacturing
+// sector?
+var group = [];
+for (var i = 0; i < companies.length; i++){
+  var item = companies[i];
+  if(item.sector == "manufacturing"){
+    group.push(item);
+  }
+}
+var averages = 0;
+for (var i = 0; i < group.length; i++) {
+  averages += group[i].marketCap;
+  av = averages/group.length;
+}
+console.log("The average market cap for companies in the manufacturing sector is: ", av);
+
+
+
+</script>
+</body>
+</html>
