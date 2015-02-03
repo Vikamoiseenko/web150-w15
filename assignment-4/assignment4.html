@@ -18,6 +18,26 @@ for (var i = 0; i < companies.length; i++){
 }
 console.log("The smallest company is:", smallest.company);
 console.log(smallest.employees);
+
+
+//(optional, not for credit) Which sector has the highest
+//number of employees? Which has the lowest?
+var high = companies[0];
+var lower = companies[0];
+for (var i = 0; i < companies.length; i++){
+  var item = companies[i];
+  if (item.employees > high.employees){
+    high =item;
+  }
+  if (item.employees < lower.employees){
+    lower =item;
+  }
+}
+console.log("The highest sector of employees:", high.employees);
+console.log(high.sector);
+console.log("The lowest sector of employees:", lower.employees);
+console.log(lower.sector);
+
 </script>
 <script>
 //Several companies lost money this year: they had a negative
@@ -46,8 +66,6 @@ for (var i = 0; i < group.length; i++) {
   av = averages/group.length;
 }
 console.log("The average market cap for companies in the manufacturing sector is: ", av);
-
-
 
 </script>
 </body>
