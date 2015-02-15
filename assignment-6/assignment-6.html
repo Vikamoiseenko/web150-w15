@@ -44,7 +44,7 @@ p {
     <th>Size</th>
     <th>Color</th>
   </tr>
-  <tr>
+  <tr class="filter">
     <td class="name">Link</td>
     <td class="breed">Shepherd/Rottweiler</td>
     <td class="sex">Female</td>
@@ -52,7 +52,7 @@ p {
     <td>Black, Brown</td>
   </tr>
 
-  <tr>
+  <tr class="filter">
     <td class="name">Charlie</td>
     <td class="breed">Retriever, Labrador/ Mix</td>
     <td class="sex">Male</td>
@@ -60,7 +60,7 @@ p {
     <td>Gold/Brown</td>
   </tr>
 
-  <tr>
+  <tr class="filter">
     <td class="name">Oso</td>
     <td class="breed">Alaskan Malamute/Samoyed</td>
     <td class="sex">Male</td>
@@ -68,7 +68,7 @@ p {
     <td>White</td>
   </tr>
 
-  <tr>
+  <tr class="filter">
     <td class="name">Edmond</td>
     <td class="breed">Alaskan Malamute/Siberian Husky</td>
     <td class="sex">Female</td>
@@ -76,7 +76,7 @@ p {
     <td>White, Brown, Black</td>
   </tr>
 
-  <tr>
+  <tr class="filter">
     <td class="name">Patches</td>
     <td class="breed">Terrier, Pit Bull / Mix</td>
     <td class="sex">Female</td>
@@ -84,7 +84,7 @@ p {
     <td>Black,White</td>
   </tr>
 
-  <tr>
+  <tr class="filter">
     <td class="name">Zoey</td>
     <td class="breed">Chihuahua, Short Coat /Mix</td>
     <td class="sex">Female</td>
@@ -92,7 +92,7 @@ p {
     <td>White</td>
   </tr>
 
-  <tr>
+  <tr class="filter">
     <td class="name">Penny Girl</td>
     <td class="breed">Pomeranian / Mix</td>
     <td class="sex">Female</td>
@@ -100,7 +100,7 @@ p {
     <td>Black, Gold</td>
   </tr>
 
-  <tr>
+  <tr class="filter">
     <td class="name">James</td>
     <td class="breed">Chihuahua, Short Coat / Mix</td>
     <td class="sex">Male</td>
@@ -108,7 +108,7 @@ p {
     <td>Gold, White</td>
   </tr>
 
-  <tr>
+  <tr class="filter">
     <td class="name">Sally</td>
     <td class="breed">Terrier / Mix</td>
     <td class="sex">Female</td>
@@ -130,8 +130,7 @@ filterButtons.on("click", function() {
   //hide all rows
   rows.hide();
   var selector = "." + filter;
-  //rows.filter(selector).show();
-  $('table').find(selector).show;
+  $('tr').find(selector).parent().show();
 });
 
 var allButton = $(".reset");
