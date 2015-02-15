@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+<head>
+<meta charset=utf8>
+<style>
+table {
+  background-color: #FFFF00;
+  margin: 10px;
+  padding: 5px;
+  text-align: center;
+  border-radius: 15px;
+  }
+thead, th, td {
+  border: 1px solid black;
+  padding: 6px;
+  margin: 5px;
+  }
+button {
+  float: center;
+  background-color: #FF1493;
+  }
+p {
+  font-size: 30px;
+  text-align: justify;
+  color: #383838;
+  }
+</style>
+</head>
+<body>
+  <p>Dogs available for adoption</p>
+<nav>
+  <button class="reset">Show all dogs</button>
+  <button class="filter" data-filter="small">Small</button>
+  <button class="filter" data-filter="medium">Medium</button>
+  <button class="filter" data-filter="large">Large</button>
+</nav>
+<main>
+  <table>
+  <tr>
+    <th>Name
+    <th>Bread
+    <th>Sex
+    <th>Size
+    <th>Color
+  </tr>
+  <tr>
+    <td>Link
+    <td>Shepherd/Rottweiler
+    <td>Female
+    <td>Small
+    <td>Black, Brown
+  </tr>
+
+  <tr>
+    <td>Charlie
+    <td>Retriever, Labrador/ Mix
+    <td>Male
+    <td>Large
+    <td>Gold/Brown
+  </tr>
+
+  <tr>
+    <td>Oso
+    <td>Alaskan Malamute/Samoyed
+    <td>Male
+    <td>Large
+    <td>White
+  </tr>
+
+  <tr>
+    <td>Edmond
+    <td>Alaskan Malamute/Siberian Husky
+    <td>Female
+    <td>Medium
+    <td>White, Brown, Black
+  </tr>
+
+  <tr>
+    <td>Patches
+    <td>Terrier, Pit Bull / Mix
+    <td>Female
+    <td>Medium
+    <td>Black,White
+  </tr>
+
+  <tr>
+    <td>Zoey
+    <td>Chihuahua, Short Coat /Mix
+    <td>Female
+    <td>Small
+    <td>White
+  </tr>
+
+  <tr>
+    <td>Penny Girl
+    <td>Pomeranian / Mix
+    <td>Female
+    <td>Small
+    <td>Black, Gold
+  </tr>
+
+  <tr>
+    <td>James
+    <td>Chihuahua, Short Coat / Mix
+    <td>Male
+    <td>Medium
+    <td>Gold, White
+  </tr>
+
+  <tr>
+    <td>Sally
+    <td>Terrier / Mix
+    <td>Female
+    <td>Small
+    <td>Black, White
+  </tr>
+  </table>
+</main>
+<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script>
+
+
+
+var rows = $("tr");
+
+var filterButtons = $(".filter");
+filterButtons.on("click", function() {
+  var $this = $(this);
+  var filter = $this.attr("data-filter"); //find filter and give me attr
+  //hide all rows
+  rows.fadeOut(1000);
+  var selector = "." + filter;
+  $(selector).show();
+  //$('table').find(selector).show;
+});
+
+var allButton = $(".reset");
+allButton.on("click", function() {
+  rows.fadeIn(1000);
+});
+
+</script>
+</body>
+</html>
