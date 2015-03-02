@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+ <title>Assignment-8 Irregular Expression</title>
+ <meta charset="utf8">
+</head>
+<body>
+  <form>
+  <label>Type only vowels</label>
+ <input pattern="[aeiou]" class="vowel" data-error="Please enter only vowels">
+ <span class="error"></span>
+<input type="submit" class="submit"
+</form>
+ <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+ <script>
+$('input[type=submit]').on('click', function(e) {
+var vowel = $(".vowel");
+vowel.on("change", function() {
+var vowel = /^[aeiou]$/;
+var $this = $(this);
+var form = $this.closest('form');
+var inputs = form.find('input[pattern]');
+var valid = vowels.test(inputs);
+if(!valid) {
+  e.preventDefault();
+  var error = valid.attr('data-error'); //if wrong display error message
+  valid.next('.error').html(error);
+  valid.addClass('invalid');
+} else {
+  valid.removeClass('invalid'); //if vowel is correct
+    }
+
+  })
+});
+ </script>
+</body>
+</html>
