@@ -4,16 +4,14 @@
  <title>Assignment-8 Irregular Expression</title>
  <meta charset="utf8">
  <style>
- .hidden {display:none;}
- .visible  {display:block;}
- .message {color:pink;}
+ .message {color:blue;}
  </style>
 </head>
 <body>
   <form>
   <label>Type only vowels</label>
  <input class="vowel">
- <div class="message hidden"></div>
+ <span class="message"></span>
 
  <label>Word with ing</label>
  <input class="ing">
@@ -30,10 +28,11 @@ var vowels = /^[aeiou]+$/;
 var $this = $(this);
 var value = $this.val();
 var valid = vowels.test(value);
+var span = $("span.message");
 if(!valid) {
-$(".message").addClass("visible");
+span.html("Please type only vowels");
 } else {
-  $(".message").removeClass("hidden"); //if vowel is correct
+  span.html("You type vowels"); //if vowel is correct
     }
 
   });
@@ -55,15 +54,15 @@ ing.on("change", function() {
 
 var numbers = $(".numbers");
 numbers.on("change", function() {
-  var numbers = /^-?\d+[.,]?\d*(,\d{3})?$/;
+  var numbers = /^-?\d+[.,]?\d*(,\d{3})?/;
   var $this = $(this);
   var value = $this.val();
   var valid = numbers.test(value);
   if(!valid) {
-    $(".submit").attr("disabled", true);
+    $(".submit").attr("disabled");
     console.log("Disabled")
   }else {
-    $(".submit").attr("disabled", false);
+    $(".submit").attr("disabled");
     console.log("Enabled");
   }
 });
