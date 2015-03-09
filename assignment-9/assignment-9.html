@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<title>Assignment-9></title>
+<style>
+.output{
+border: 1px solid black;
+height: 200px;
+overflow: scroll;
+}
+</style>
+</head>
+<body>
+<div class="output"></div>
+<button class="load">Get more!</button>
+<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script>
+var url = "http://www.thomaswilburn.net:8080/social";
+var load = $(".load");
+var lastUpdate = 1;
+var output = $(".output");
+
+var loadMore = function(){
+var request = $.ajax({
+url: url,
+data: {
+since: lastUpdate
+}
+});
+request.done(whenDone);
+};
+var whenDone = function(data){
+lastUpdate = data.at;
+for (var i = 0; i < data.updates.length; i++){
+var line = data.updates[i];
+var text = line.status;
+"<br>";
+output.append(text);
+}
+};
+
+$(window).load(function() {
+  loadMore();
+});
+
+load.on("click", function(){
+  loadMore();
+});
+output.scroll(function(){
+  loadMore();
+});
+
+</script>
+</body>
+</html>
